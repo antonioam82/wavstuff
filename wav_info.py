@@ -29,10 +29,15 @@ while True:
         channels = w.getnchannels()
         width = w.getsampwidth()
         data = len(w.readframes(frames))
-        
+        t=""
+        if channels==1:
+            t=" (Mono)"
+        else:
+            t=" (Stereo)"
+                
         print('\nSampling Rate: ',framerate, 'Hz')
         print('Length: ',frames, 'samples')
-        print('Channels: ',channels)
+        print('Channels: ',channels,t)
         print('Sample Width: ',width, 'bytes')
         print('Buffer Size: ',data, 'bytes\n')
 
